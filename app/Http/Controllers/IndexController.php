@@ -70,6 +70,7 @@ class IndexController extends SiteController
     
     public function getSliders() {
         $sliders = $this->s_rep->get('*');
+        
         if($sliders->isEmpty()) {
             return FALSE;
         }

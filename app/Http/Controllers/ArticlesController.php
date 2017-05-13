@@ -67,7 +67,9 @@ class ArticlesController extends SiteController
         if($article) {
             $article->img = json_decode($article->img);
         }
-        
+//        if(!$article) {
+//
+//        }
         $comments = $this->getComments(2);
         $portfolios = $this->getPortfolios(3);
         $sidebar = view(env('THEME'). '.articles_bar')->with(['comments'=>$comments,'portfolios' => $portfolios])->render();

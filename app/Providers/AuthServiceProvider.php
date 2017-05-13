@@ -4,6 +4,8 @@ namespace Pako\Providers;
 
 use Illuminate\Contracts\Auth\Access\Gate as GateContract;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
+use Pako\Article;
+use Pako\Policies\ArticlePolicy;
 
 class AuthServiceProvider extends ServiceProvider
 {
@@ -13,7 +15,8 @@ class AuthServiceProvider extends ServiceProvider
      * @var array
      */
     protected $policies = [
-        'Pako\Model' => 'Pako\Policies\ModelPolicy',
+        Article::class => ArticlePolicy::class,
+
     ];
 
     /**
@@ -24,7 +27,14 @@ class AuthServiceProvider extends ServiceProvider
      */
     public function boot(GateContract $gate)
     {
+        
         $this->registerPolicies($gate);
+        $gate->define('VIEW_ADMIN',function($user) {
+            return $user->canDo('VIEW_ADMIN');
+        });
+        $gate->define('VIEW_ADMIN_ARTICLES',function($user) {
+            return $user->canDo('VIEW_ADMIN_ARTICLES');
+        });
 
         //
     }

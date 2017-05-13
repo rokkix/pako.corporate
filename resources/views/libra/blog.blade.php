@@ -10,7 +10,7 @@
                 <div class="post type-post status-publish format-video category-design hentry-post span6 sticky">
                     <div class="row">
                         <div class="thumbnail span3">
-                            <img width="263" height="243" src="{{ asset(env('THEME')) }}/images/{{ $item->img->mini }}" class="attachment-section_blog wp-post-image" alt="3" />
+                            <img width="263" height="243" src="{{ asset(env('THEME')) }}/images/blog/{{ $item->img->mini }}" class="attachment-section_blog wp-post-image" alt="3" />
                             <div class="date span1">
                                 <p>
                                     <span class="month">{{ $item->created_at->format('F') }}</span>
