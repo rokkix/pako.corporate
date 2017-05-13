@@ -234,7 +234,7 @@
                 {{ session('error') }}
             </div>
         @endif
-        <div id="primary" class="sidebar-right">
+        <div id="primary" class="sidebar-no">
             <div class="container group">
                 <div class="row">
                     <!-- START CONTENT -->
