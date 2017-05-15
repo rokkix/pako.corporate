@@ -5,6 +5,9 @@ namespace Pako\Providers;
 use Illuminate\Routing\Router;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Pako\Article;
+use Pako\Menu;
+use Pako\Slider;
+use Pako\User;
 
 class RouteServiceProvider extends ServiceProvider
 {
@@ -30,6 +33,25 @@ class RouteServiceProvider extends ServiceProvider
         parent::boot($router);
         $router->bind('articles',function($value) {
             return Article::where('alias',$value)->first();
+        });
+        $router->bind('menus',function($value){
+
+            $result = Menu::where('id',$value)->first();
+            if(!$result) {
+                abort(404);
+            }
+            return $result;
+        });
+        $router->bind('users',function($value){
+           return User::find($value);
+        });
+        $router->bind('sliders',function($value){
+
+            $result = Slider::where('id',$value)->first();
+            if(!$result) {
+                abort(404);
+            }
+            return $result;
         });
     }
 

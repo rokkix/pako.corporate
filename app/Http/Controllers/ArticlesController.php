@@ -41,14 +41,21 @@ class ArticlesController extends SiteController
 
     public function getArticles($alias = FALSE) {
         $where = FALSE;
+
         if($alias) {
+            if (!Category::select('id')->where('alias',$alias)->first()) {
+               return abort(404);
+            }
+
             $id = Category::select('id')->where('alias',$alias)->first()->id;
+
             $where = ['category_id',$id];
         }
         $articles = $this->a_rep->get('*',FALSE,2,$where);
         if($articles) {
             $articles->load('user','category','comments');
         }
+
         return $articles;
 
     }
@@ -63,6 +70,7 @@ class ArticlesController extends SiteController
     }
 
     public function show($alias = FALSE) {
+        
         $article = $this->a_rep->one($alias,['comments' => TRUE]);
         if($article) {
             $article->img = json_decode($article->img);

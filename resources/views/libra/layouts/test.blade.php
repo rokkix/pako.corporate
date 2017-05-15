@@ -87,6 +87,7 @@
     <script type="text/javascript" src="{{ asset(env('THEME')) }}/js/1/jquery.js"></script>
     <script type="text/javascript" src="{{ asset(env('THEME')) }}/js/1/ckeditor/ckeditor.js"></script>
     <script type="text/javascript" src="{{ asset(env('THEME')) }}/js/1/bootstrap-filestyle.min.js"></script>
+    <script type="text/javascript" src="{{ asset(env('THEME')) }}/js/jquery-ui.js"></script>
 
     <style type="text/css">
         body { background-color: #ffffff; background-image: url('{{ asset(env('THEME')) }}/images/bg-pattern.png'); background-repeat: repeat; background-position: top left; background-attachment: scroll; }
@@ -96,7 +97,9 @@
     {{--<link rel="stylesheet" type="text/css" media="all" href="{{ asset(env('THEME')) }}/css/1/reset.css" /> <!-- RESET STYLESHEET -->--}}
 
     <link rel="stylesheet" type="text/css" media="all" href="{{ asset(env('THEME')) }}/css/1/style-minifield.css" /> <!-- MAIN THEME STYLESHEET -->
+    <link rel="stylesheet" type="text/css" media="all" href="{{ asset(env('THEME')) }}/css/1/style-minifield.css" /> <!-- MAIN THEME STYLESHEET -->
     <link rel="stylesheet" type="text/css" media="all" href="{{ asset(env('THEME')) }}/css/1/buttons.css" /> <!-- MAIN THEME STYLESHEET -->
+    <link rel="stylesheet" type="text/css" media="all" href="{{ asset(env('THEME')) }}/css/jquery-ui.css" /> <!-- MAIN THEME STYLESHEET -->
     {{--<link rel="stylesheet" type="text/css" media="all" href="{{ asset(env('THEME')) }}/css/1/cache-custom.css" /> <!-- MAIN THEME STYLESHEET -->--}}
     {{--<link rel="stylesheet" type="text/css" media="all" href="{{ asset(env('THEME')) }}/css/1/cache-custom.css" /> <!-- MAIN THEME STYLESHEET -->--}}
 
@@ -260,4 +263,9 @@
 
 </body>
 <!-- END BODY -->
+
+
+
+
+
 </html>

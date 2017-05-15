@@ -5,9 +5,15 @@ namespace Pako\Providers;
 use Illuminate\Contracts\Auth\Access\Gate as GateContract;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 use Pako\Article;
+use Pako\Menu;
 use Pako\Permission;
 use Pako\Policies\ArticlePolicy;
+use Pako\Policies\MenusPolicy;
 use Pako\Policies\PermissionPolicy;
+use Pako\Policies\SliderPolicy;
+use Pako\Policies\UserPolicy;
+use Pako\Slider;
+use Pako\User;
 
 class AuthServiceProvider extends ServiceProvider
 {
@@ -18,7 +24,10 @@ class AuthServiceProvider extends ServiceProvider
      */
     protected $policies = [
         Article::class => ArticlePolicy::class,
-        Permission::class => PermissionPolicy::class
+        Permission::class => PermissionPolicy::class,
+        Menu::class => MenusPolicy::class,
+        User::class => UserPolicy::class,
+        Slider::class => SliderPolicy::class
 
     ];
 
@@ -40,6 +49,18 @@ class AuthServiceProvider extends ServiceProvider
         });
         $gate->define('EDIT_USERS',function($user) {
             return $user->canDo('EDIT_USERS');
+        });
+        $gate->define('VIEW_ADMIN_MENU',function($user) {
+            return $user->canDo('VIEW_ADMIN_MENU');
+        });
+        $gate->define('EDIT_MENU',function($user) {
+            return $user->canDo('EDIT_MENU');
+        });
+        $gate->define('VIEW_ADMIN_SLIDER',function($user) {
+            return $user->canDo('VIEW_ADMIN_SLIDER');
+        });
+        $gate->define('VIEW_PORTFOLIOS_SLIDER',function($user) {
+            return $user->canDo('VIEW_PORTFOLIOS_SLIDER');
         });
 
         //

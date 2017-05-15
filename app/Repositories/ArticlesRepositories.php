@@ -22,9 +22,14 @@ class ArticlesRepositories extends Repository
         $this->model = $articles;
     }
 
+
+
     public function one($alias, $attr = [])
     {
-        $article = parent::one($alias, $attr);
+        $article = $this->model->where('alias', $alias)->first();
+        if(!$article){
+            return abort(404);
+        }
         if ($article && !empty($attr)) {
             $article->load('comments');
             $article->comments->load('user');
@@ -73,14 +78,21 @@ class ArticlesRepositories extends Repository
                 $img->fit(Config::get('setting.articles_img')['mini']['width'],
                     Config::get('setting.articles_img')['mini']['height'])->save(public_path() . '/' . env('THEME') . '/images/blog/' . $obj->mini);
                 $data['img'] = json_encode($obj);
-                $this->model->fill($data);
-                if ($request->user()->articles()->save($this->model)) {
-                    return ['status' => 'Материал добавлен'];
-                }
+
 
             }
 
+        } else {
+            $request->flash();
+            return ['error' => 'Не загружена картинка'];
         }
+        $this->model->fill($data);
+        if ($request->user()->articles()->save($this->model)) {
+            return ['status' => 'Материал добавлен'];
+        }
+
+
+
     }
 
     public function updateArticle($request, $article)

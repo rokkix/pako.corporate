@@ -15,44 +15,24 @@
 
         </ul>
 
-        <!-- ei-slider-large -->
-        <ul class="ei-slider-thumbs">
-            <li class="ei-slider-element">
-                Current
-            </li>
 
-            <li>
-                <a href="#">Welcome to Libra - </a>
-                <img src="{{ asset(env('THEME')) }}/images/slider/001-150x59.jpg" alt=" - " />
-            </li>
+            <!-- ei-slider-large -->
+            <ul class="ei-slider-thumbs">
+                <li class="ei-slider-element">
+                    Current
+                </li>
+                @foreach($sliders as $slider)
+                    <li>
+                        <a href="#">
+                            Enjoy your freedom... -
+                        </a>
 
-            <li>
-                <a href="#">
-                    Be yourself... -
-                </a>
-                <img src="{{ asset(env('THEME')) }}/images/slider/002-150x59.jpg" alt=" - " />
-            </li>
+                    </li>
+                @endforeach
 
-            <li>
-                <a href="#">
-                    A new WP theme -
-                </a>
-                <img src="{{ asset(env('THEME')) }}/images/slider/003-150x59.jpg" alt=" - " />
-            </li>
 
-            <li>
-                <a href="#">
-                    This premium theme -
-                </a>
-                <img src="{{ asset(env('THEME')) }}/images/slider/004-150x59.jpg" alt=" - " />
-            </li>
+            </ul>
 
-            <li>
-                <a href="#">
-                    Enjoy your freedom... -
-                </a>
-                <img src="{{ asset(env('THEME')) }}/images/slider/005-150x59.jpg" alt=" - " />
-            </li>
         </ul>
         <!-- ei-slider-thumbs -->
 

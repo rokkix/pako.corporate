@@ -5,6 +5,7 @@ namespace Pako\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Gate;
 use Pako\Http\Requests;
 use Pako\Http\Controllers\Controller;
 use Menu;
@@ -48,11 +49,14 @@ class AdminController extends Controller
     }
     public function getMenu() {
         return Menu::make('adminMenu',function($menu){
-            $menu->add('Статьи',array('route'=>'admin.articles.index'));
+            if(Gate::allows('VIEW_ADMIN_ARTICLES')) {
+                $menu->add('Статьи',array('route'=>'admin.articles.index'));
+            }
 
-            $menu->add('Наши работы',array('route'=>'admin.articles.index'));
-            $menu->add('Меню',array('route'=>'admin.articles.index'));
-            $menu->add('Пользователи',array('route'=>'admin.articles.index'));
+            $menu->add('Слайдер',array('route'=>'admin.sliders.index'));
+            $menu->add('Наши работы',array('route'=>'admin.portfolios.index'));
+            $menu->add('Меню',array('route'=>'admin.menus.index'));
+            $menu->add('Пользователи',array('route'=>'admin.users.index'));
             $menu->add('Привилегии',array('route'=>'admin.permissions.index'));
         });
     }
