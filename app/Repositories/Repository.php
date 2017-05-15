@@ -51,9 +51,7 @@ abstract class Repository
     {
 
         $result = $this->model->where('alias', $alias)->first();
-        if (!$result) {
-            abort(404);
-        }
+        
         return $result;
 
     }

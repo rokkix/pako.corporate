@@ -10,8 +10,11 @@ use Pako\Permission;
 use Pako\Policies\ArticlePolicy;
 use Pako\Policies\MenusPolicy;
 use Pako\Policies\PermissionPolicy;
+use Pako\Policies\PortfolioPolicy;
 use Pako\Policies\SliderPolicy;
 use Pako\Policies\UserPolicy;
+use Pako\Portfolio;
+use Pako\Repositories\PortfoliosRepositories;
 use Pako\Slider;
 use Pako\User;
 
@@ -27,7 +30,8 @@ class AuthServiceProvider extends ServiceProvider
         Permission::class => PermissionPolicy::class,
         Menu::class => MenusPolicy::class,
         User::class => UserPolicy::class,
-        Slider::class => SliderPolicy::class
+        Slider::class => SliderPolicy::class,
+        Portfolio::class => PortfolioPolicy::class
 
     ];
 
@@ -61,6 +65,9 @@ class AuthServiceProvider extends ServiceProvider
         });
         $gate->define('VIEW_PORTFOLIOS_SLIDER',function($user) {
             return $user->canDo('VIEW_PORTFOLIOS_SLIDER');
+        });
+        $gate->define('ADD_PORTFOLIO',function($user) {
+            return $user->canDo('ADD_PORTFOLIO');
         });
 
         //

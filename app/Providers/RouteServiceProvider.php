@@ -6,6 +6,7 @@ use Illuminate\Routing\Router;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Pako\Article;
 use Pako\Menu;
+use Pako\Portfolio;
 use Pako\Slider;
 use Pako\User;
 
@@ -33,6 +34,9 @@ class RouteServiceProvider extends ServiceProvider
         parent::boot($router);
         $router->bind('articles',function($value) {
             return Article::where('alias',$value)->first();
+        });
+        $router->bind('portfolios',function($value) {
+            return Portfolio::where('alias',$value)->first();
         });
         $router->bind('menus',function($value){
 

@@ -4,6 +4,7 @@ namespace Pako\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use Gate;
+use Pako\Filter;
 use Pako\Http\Requests;
 use Pako\Http\Controllers\Controller;
 use Pako\Portfolio;
@@ -54,21 +55,23 @@ class PortfoliosController extends AdminController
         if (Gate::denies('save',new Portfolio())) {
             abort(403);
         }
-        $this->title = "Добавить новый материал";
+        $this->title = "Добавить новую работу";
 
-        $categories = Category::select(['title','parent_id','alias','id'])->get();
-        $lists = array();
-        foreach ($categories as $category) {
-            if($category->parent_id == 0){
-                $lists[$category->title] = array();
+        //$filters = Filter::select(['title','alias','id'])->get();
+       // $lists = array();
+        $filter = $this->getFilters()->reduce(function ($returnFilters, $filter) {
+            $returnFilters[$filter->alias] = $filter->alias;
+            return $returnFilters;
+        }, []);
+       //dd($filter);
 
-            } else {
-                $lists[$categories->where('id',$category->parent_id)->first()->title][$category->id] = $category->title;
 
-            }
-        }
-        $this->content = view(env('THEME'). '.admin.articles_create_content')->with('categories',$lists)->render();
+
+        $this->content = view(env('THEME'). '.admin.portfolios_create_content')->with('filters',$filter)->render();
         return $this->renderOutput();
+    }
+    public function getFilters() {
+        return Filter::all();
     }
 
     /**
@@ -77,9 +80,13 @@ class PortfoliosController extends AdminController
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Requests\PortfolioRequest $request)
     {
-        //
+        $result = $this->p_rep->addPortfolio($request);
+        if(is_array($result) && !empty($result['error'])) {
+            return back()->with($result);
+        }
+        return redirect('/admin')->with($result);
     }
 
     /**
@@ -99,9 +106,21 @@ class PortfoliosController extends AdminController
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Portfolio $portfolio)
     {
-        //
+        if(Gate::denies('edit',new Portfolio())) {
+            abort(403);
+        }
+
+        $portfolio->img = json_decode($portfolio->img);
+        $filter = $this->getFilters()->reduce(function ($returnFilters, $filter) {
+            $returnFilters[$filter->alias] = $filter->alias;
+            return $returnFilters;
+        }, []);
+
+        $this->title = 'Редактирование материала - '.$portfolio->title;
+        $this->content = view(env('THEME'). '.admin.portfolios_create_content')->with(['filters' => $filter,'portfolio'=>$portfolio])->render();
+        return $this->renderOutput();
     }
 
     /**
@@ -111,9 +130,13 @@ class PortfoliosController extends AdminController
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Requests\PortfolioRequest $request, Portfolio $portfolio)
     {
-        //
+        $result = $this->p_rep->updatePortfolio($request,$portfolio);
+        if(is_array($result) && !empty($result['error'])) {
+            return back()->with($result);
+        }
+        return redirect()->route('admin.portfolios.index')->with($result);
     }
 
     /**
@@ -122,8 +145,12 @@ class PortfoliosController extends AdminController
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Portfolio $portfolio)
     {
-        //
+        $result = $this->p_rep->deletePortfolio($portfolio);
+        if(is_array($result) && !empty($result['error'])) {
+            return back()->with($result);
+        }
+        return redirect()->route('admin.portfolios.index')->with($result);
     }
 }
