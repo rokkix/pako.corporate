@@ -28,8 +28,8 @@
                                     transition: 'elastic',
                                     rel: 'lightbox_fulldesc',
                                     fixed: true,
-                                    maxWidth: '80%',
-                                    maxHeight: '80%',
+                                    maxWidth: '100%',
+                                    maxHeight: '100%',
                                     opacity: 0.7
                                 });
                             });
@@ -73,12 +73,12 @@
 
                         <div class="related_img">
                             <div class="picture_overlay">
-                                <img width="258" height="170" src="{{ asset(env('THEME')) }}/images/portfolios/{{ $portfolio->img->max }}" class="attachment-thumb_portfolio_fulldesc_related" alt="009"/>
+                                <img width="360" height="216" src="{{ asset(env('THEME')) }}/images/photos/{{ $portfolio->img->max }}" class="attachment-thumb_portfolio_fulldesc_related" alt="009"/>
 
                                 <div class="overlay">
                                     <div>
                                         <p>
-                                            <a href="{{ asset(env('THEME')) }}/images/portfolios/{{ $portfolio->img->path }}" rel="lightbox" class="ch-info-lightbox">
+                                            <a href="{{ asset(env('THEME')) }}/images/photos/{{ $portfolio->img->path }}" rel="lightbox" class="ch-info-lightbox">
                                                 <img src="{{ asset(env('THEME')) }}/images/icons/zoom.png" alt="Open Lightbox"/>
                                             </a>
                                             <a href="#">

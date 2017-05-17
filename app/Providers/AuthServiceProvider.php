@@ -7,6 +7,7 @@ use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvid
 use Pako\Article;
 use Pako\Menu;
 use Pako\Permission;
+use Pako\Photo;
 use Pako\Policies\ArticlePolicy;
 use Pako\Policies\MenusPolicy;
 use Pako\Policies\PermissionPolicy;
@@ -31,7 +32,9 @@ class AuthServiceProvider extends ServiceProvider
         Menu::class => MenusPolicy::class,
         User::class => UserPolicy::class,
         Slider::class => SliderPolicy::class,
-        Portfolio::class => PortfolioPolicy::class
+        Portfolio::class => PortfolioPolicy::class,
+        Photo::class => PortfolioPolicy::class
+        
 
     ];
 

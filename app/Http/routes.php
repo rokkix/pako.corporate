@@ -41,4 +41,7 @@ Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
     Route::resource('/users','Admin\UsersController');
     Route::resource('/sliders','Admin\SlidersController');
     Route::resource('/portfolios','Admin\PortfoliosController');
+    Route::resource('/photos','Admin\PhotosController');
+   // Route::get('/photo/{id}', 'Admin\PhotosController@createNew')->name('photo');
+    //Route::get('/photo/{id?}',['uses'=>'Admin\PhotosController@create','as'=>'photo']);
 });

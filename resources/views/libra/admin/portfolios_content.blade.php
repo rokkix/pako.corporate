@@ -33,7 +33,8 @@
                             </td>
                             <td>{{$portfolio->filter->title}}</td>
                             <td>{{$portfolio->customer}}</td>
-                            <td>{!! Html::link(route('admin.portfolios.show',['portfolios'=>$portfolio->id]),'Редактировать',['class' => 'btn btn-the-salmon-dance-3']) !!}</td>
+
+                            <td>{!! Html::link(route('admin.photos.show',['photos'=>$portfolio->id]),'Редактировать',['class' => 'btn btn-the-salmon-dance-3']) !!}</td>
                             <td>
                                 {!! Form::open(['url' => route('admin.portfolios.destroy',['$portfolio'=>$portfolio->alias]),'class'=>'form-horizontal','method'=>'POST']) !!}
                                 {{ method_field('DELETE') }}

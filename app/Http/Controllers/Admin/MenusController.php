@@ -165,6 +165,7 @@ class MenusController extends AdminController
 
         $type = FALSE;
         $option = FALSE;
+        
 
         $route = (app('router')->getRoutes()->match(app('request')->create($menu->path)));
 

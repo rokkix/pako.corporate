@@ -48,6 +48,8 @@
             </li>
 
 
+
+
             @if(isset($portfolio->img->path))
                 <li class="textarea-field">
 

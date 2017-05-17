@@ -6,6 +6,7 @@ use Illuminate\Routing\Router;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Pako\Article;
 use Pako\Menu;
+use Pako\Photo;
 use Pako\Portfolio;
 use Pako\Slider;
 use Pako\User;
@@ -38,6 +39,15 @@ class RouteServiceProvider extends ServiceProvider
         $router->bind('portfolios',function($value) {
             return Portfolio::where('alias',$value)->first();
         });
+//        $router->bind('photos',function($value) {
+//
+//        $res =  Photo::where('id',$value)->first();
+//        if(!$res) {
+//            abort(404);
+//        }
+//        return $res;
+//    });
+       
         $router->bind('menus',function($value){
 
             $result = Menu::where('id',$value)->first();

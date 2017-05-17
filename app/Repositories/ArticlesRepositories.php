@@ -27,9 +27,9 @@ class ArticlesRepositories extends Repository
     public function one($alias, $attr = [])
     {
         $article = $this->model->where('alias', $alias)->first();
-        if(!$article){
-            return abort(404);
-        }
+//        if(!$article){
+//            return abort(404);
+//        }
         if ($article && !empty($attr)) {
             $article->load('comments');
             $article->comments->load('user');
