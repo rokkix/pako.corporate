@@ -14,7 +14,7 @@ abstract class Repository
 {
     protected $model = FALSE;
 
-    public function get($select = '*', $take = FALSE, $pagination = FALSE, $where = FALSE)
+    public function get($select = '*', $take = FALSE, $pagination = FALSE, $where = FALSE,$sort = FALSE)
     {
         $builder = $this->model->select($select);
         if ($take) {
@@ -23,6 +23,10 @@ abstract class Repository
 
         if ($where) {
             $builder->where($where[0], $where[1]);
+        }
+        if($sort) {
+
+            $builder->orderBy('created_at','desc');
         }
 
         if ($pagination) {

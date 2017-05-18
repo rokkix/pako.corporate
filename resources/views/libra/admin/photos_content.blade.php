@@ -7,10 +7,10 @@
                     <thead>
                     <tr>
                         <th class="align-left">ID</th>
-
-
+                        <th>Изменить</th>
+                        <th>Заголовок</th>
                         <th>Изображение</th>
-                        <th>Куда вложен</th>
+                        <th>Находится в</th>
 
                         <th>Дествие</th>
                     </tr>
@@ -19,8 +19,9 @@
 
                     @foreach($photos as $photo)
                         <tr>
-                            <td class="align-left">{!! Html::link(route('admin.photos.edit',['photos'=>$photo->id]),$photo->id) !!}</td>
-
+                            <td>{{($photo->id)}}</td>
+                            <td>{!! Html::link(route('admin.photos.edit',['photos'=>$photo->id]),'Редактировать',['class' => 'btn btn-the-salmon-dance-3']) !!}</td>
+                            <td>{{($photo->title)}}</td>
 
                             <td>
 
@@ -28,7 +29,7 @@
                                     {!! Html::image(asset(env('THEME')).'/images/photos/'.$photo->img->max) !!}
                                 @endif
                             </td>
-                            <td>{{($photo->portfolio_id)}}</td>
+                            <td>{{($photo->portfolio->alias)}}</td>
 
 
                             <td>

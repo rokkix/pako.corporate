@@ -11,17 +11,19 @@ use Pako\Repositories\ArticlesRepositories;
 use Pako\Repositories\MenusRepositories;
 use Pako\Repositories\PortfoliosRepositories;
 use Pako\Repositories\ReviewsRepositories;
+use Pako\Repositories\ServicesRepositories;
 use Pako\Repositories\SlidersRepositories;
 
 class IndexController extends SiteController
 {
-    public function __construct(SlidersRepositories $s_rep,PortfoliosRepositories $p_rep, ReviewsRepositories $r_rep, ArticlesRepositories $a_rep)
+    public function __construct(ServicesRepositories $ser_rep,SlidersRepositories $s_rep,PortfoliosRepositories $p_rep, ReviewsRepositories $r_rep, ArticlesRepositories $a_rep)
     {
         parent::__construct(new MenusRepositories(new Menu()));
         $this->a_rep = $a_rep;
         $this->p_rep = $p_rep;
         $this->r_rep = $r_rep;
         $this->s_rep = $s_rep;
+        $this->ser_rep = $ser_rep;
         $this->template = env('THEME') . '.index';
         $this->bar = 'right';
     }
@@ -34,6 +36,10 @@ class IndexController extends SiteController
      */
     public function index()
     {
+        $services = $this->getServices();
+        //dd($services);
+        $service = view(env('THEME') . '.services_content')->with('services',$services)->render();
+        $this->vars = array_add($this->vars,'service' ,$service );
         $content = view(env('THEME').'.content')->render();
         $this->vars = array_add($this->vars,'content' ,$content );
         $articles = $this->getArticles();
@@ -52,9 +58,14 @@ class IndexController extends SiteController
         $this->vars = array_add($this->vars,'sliders' ,$sliders);
         return $this->renderOutput();
     }
+    public function getServices() {
+        $services = $this->ser_rep->get();
+        return $services;
+    }
     
     protected function getArticles() {
-        $articles = $this->a_rep->get('*',5);
+        $articles = $this->a_rep->get('*',5,FALSE,FALSE,TRUE);
+        //dd($articles);
         return $articles;
     }
     

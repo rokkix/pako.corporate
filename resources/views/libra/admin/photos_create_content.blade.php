@@ -5,13 +5,16 @@
 
         <ul>
 
-
-
-
-
-
-
-
+            <li class="text-field">
+                <label for="name-contact-us">
+                    <span class="label">Заголовок:</span>
+                    <br/>
+                    <span class="sublabel">введите заголовок</span><br/>
+                </label>
+                <div class="input-prepend"><span class="add-on"></span>
+                    {!! Form::text('title', isset($photo->title) ? $photo->title  : old('title'), ['placeholder'=>'Введите заголовок страницы']) !!}
+                </div>
+            </li>
 
 
             @if(isset($photo->img->path))
@@ -31,8 +34,8 @@
             <li class="text-field">
                 <label for="name-contact-us">
                     <span class="label">Изображение:</span>
-                    <br />
-                    <span class="sublabel">Изображение материала</span><br />
+                    <br/>
+                    <span class="sublabel">Изображение материала</span><br/>
                 </label>
                 <div class="input-prepend">
                     {!! Form::file('image', ['class' => 'filestyle','data-buttonText'=>'Выберите изображение','data-buttonName'=>"btn-primary",'data-placeholder'=>"Файла нет"]) !!}
@@ -40,24 +43,24 @@
 
             </li>
 
-                {{--<li class="text-field">--}}
-                    {{--<label for="name-contact-us">--}}
-                        {{--<span class="label">Ссылка на запись портфолио:</span>--}}
-                        {{--<br />--}}
-                        {{--<span class="sublabel">Ссылка на запись портфолио</span><br />--}}
-                    {{--</label>--}}
-                    {{--<div class="input-prepend">--}}
-                        {{--{!! Form::select('portfolio_id', $test, (isset($option) && $option) ? $option :FALSE, ['placeholder' => 'Не используется']) !!}--}}
+            {{--<li class="text-field">--}}
+            {{--<label for="name-contact-us">--}}
+            {{--<span class="label">Ссылка на запись портфолио:</span>--}}
+            {{--<br />--}}
+            {{--<span class="sublabel">Ссылка на запись портфолио</span><br />--}}
+            {{--</label>--}}
+            {{--<div class="input-prepend">--}}
+            {{--{!! Form::select('portfolio_id', $test, (isset($option) && $option) ? $option :FALSE, ['placeholder' => 'Не используется']) !!}--}}
 
-                    {{--</div>--}}
+            {{--</div>--}}
 
-                {{--</li>--}}
+            {{--</li>--}}
 
             <li class="text-field">
                 <label for="name-contact-us">
                     <span class="label">Категория:</span>
-                    <br />
-                    <span class="sublabel">Категория материала</span><br />
+                    <br/>
+                    <span class="sublabel">Категория материала</span><br/>
                 </label>
                 <div class="input-prepend">
                     {!! Form::select('portfolio_id', $portfolio_id, (isset($option) && $option) ? $option :FALSE) !!}
@@ -77,14 +80,11 @@
         </ul>
 
 
-
-
-
         {!! Form::close() !!}
 
         <script>
-            CKEDITOR.replace( 'editor' );
-            CKEDITOR.replace( 'editor2' );
+            CKEDITOR.replace('editor');
+            CKEDITOR.replace('editor2');
         </script>
     </div>
 </div>

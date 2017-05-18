@@ -2,16 +2,44 @@
     <div class="container">
         <div class="row">
             <div class="left span6">
+                <div id="sidebar-contact" class="span3 sidebar group">
+                    <div class="widget-first widget contact-info"><h3>Контакты</h3>
+
+                        <div class="sidebar-nav">
+                            <ul>
+
+                                <li>
+                                    <p><i class="icon-map-marker" style="color:#000;font-size:12px;width:12px;height:12px"></i>
+                                    <span>Адресс</span> г.Минск , ул. Янки Мавра 3, офис 5 </p>
+                                </li>
+
+                                <li>
+                                   <p> <i class="icon-phone" style="color:#000;font-size:12px;width:12px;height:12px"></i>
+                                    <span>Телефон:</span> +375 (29) 705-80-04</p>
+                                </li>
+
+                                <li>
+                                   <p> <i class="icon-envelope" style="color:#000;font-size:12px;width:12px;height:12px"></i>
+                                    <span>Email:</span> pako@pako.by</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+            <div class="span6">
                 <p>
-                    <a href="http://yithemes.com/"><img src="http://yithemes.com/cdn/images/various/footer_yith_grey.png" alt="Your Inspiration Themes" style="position:relative; top:9px; margin: -22px 5px 0 0;"></a>&nbsp;Copyright 2012 - <strong>Libra theme</strong> by
-                    Your Inspiration Themes
+
+
+
+                        <img src="{{ asset(env('THEME')) }}/images/footer-pic.png" title="Libra" alt="Libra" />
+
                 </p>
             </div>
-            <div class="right span6">
-                <p>
-                    <a href="http://yithemes.com/themes/wordpress/libra-corporate-portfolio-wp-theme/?ap_id=libra-html"><strong>Download the free version for Wordpress</strong></a>
-                </p>
-            </div>
+
         </div>
     </div>
 </div>

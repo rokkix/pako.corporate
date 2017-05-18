@@ -48,13 +48,14 @@
                 </table>
             </div>
 
-            {!! HTML::link(route('admin.portfolios.create'),'Добавить  материал',['class' => 'btn btn-the-salmon-dance-3']) !!}
+            {!! Html::link(route('admin.portfolios.create'),'Добавить  материал',['class' => 'btn btn-the-salmon-dance-3']) !!}
 
 
         </div>
         <!-- START COMMENTS -->
-        <div id="comments">
-        </div>
+
         <!-- END COMMENTS -->
     </div>
+@else
+    {!! Html::link(route('admin.portfolios.create'),'Добавить  материал',['class' => 'btn btn-the-salmon-dance-3']) !!}
 @endif

@@ -2,19 +2,15 @@
 <div id="content-home" class="span9 content group">
     <div class="page type-page status-publish hentry group">
         <div class="two-fourth ">
-            <h3>Welcome to libra.</h3>
-            <p>Fusce nec accumsan eros. Aenean ac orci a magna vestibulum posuere quis nec nisi. Maecenas rutrum vehicula condimentum. Donec volutpat nisl ac mauris consectetur gravida.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel vulputate nibh. Pellentesque habitant <strong>morbi tristique</strong> senectus et netus et malesuada fames ac turpis egestas.</p>
-            <p>Aenean ac orci a magna vestibulum posuere quis nec nisi. Maecenas rutrum vehicula condimentum.</p>
+            <h3>Мы ценим каждого клиента</h3>
+            <p>В своей работе сотрудники Remont Profi ориентированы на максимальное удовлетворение потребностей клиентов, поскольку лучшая реклама наших услуг – это количество довольных потребителей, готовых дать положительные характеристики нашего сервиса своим друзьям и коллегам по работе.</p>
         </div>
 
         <div class="two-fourth last">
             <h3>
-                <span style="color: #a6a258">A nice corporate theme</span>
+                <span style="color: #a6a258">Ремонт квартир под ключ</span>
             </h3>
-            <p>Fusce nec accumsan eros. Aenean ac orci a magna vestibulum posuere quis nec nisi. Maecenas rutrum vehicula condimentum. <a href="#">Donec volutpat nisl</a> ac mauris consectetur gravida.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel vulputate nibh. Pellentesque habitant <strong>morbi tristique</strong> senectus et netus et malesuada fames ac turpis egestas.</p>
-            <p>Aenean ac orci a magna vestibulum posuere quis nec nisi. Maecenas rutrum vehicula condimentum.</p>
+          <p>Строительная компания Pako осуществит ремонт квартир «под ключ». Мы работаем по всему Минску и Минской облости. Большой опыт и богатая практика на российском рынке свидетельствует о высоком качестве выполняемых работ, а налаженные контакты с поставщиками стройматерилов позволяют предложить одни из самых низких цен среди конкурентов.</p>
         </div>
     </div>
 

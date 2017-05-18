@@ -6,6 +6,10 @@ return [
         'width'=>1024,
         'height'=>768
     ],
+    'service_image' => [
+        'width'=>175,
+        'height'=>175
+    ],
     'portfolio_img' => [
         'max' => ['width'=>360,'height'=>216],
         'mini' => ['width'=>320,'height'=>154],

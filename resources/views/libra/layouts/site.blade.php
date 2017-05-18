@@ -34,7 +34,7 @@
 
 
 
-    <title>Libra | Just another Your Inspiration Themes site</title>
+    <title>Ремонт квартир,оффисов, все виды отделочных работ</title>
 
     <!-- RESET STYLESHEET -->
     <link rel="stylesheet" type="text/css" media="all" href="{{ asset(env('THEME')) }}/css/reset.css" />
@@ -142,43 +142,7 @@
 
                         <!-- START TOPBAR LOGIN -->
 
-                        <div id="topbar_login" class="not_logged_in">
 
-                            <a class="topbar_login" href="#">
-                                LOGIN <span class="sf-sub-indicator"></span>
-                            </a>
-
-                            <div id="fast-login" class="access-info-box">
-                                <form action="#" method="post" name="loginform">
-
-                                    <div class="form">
-                                        <p>
-                                            <label>
-                                                Username<br/>
-                                                <input type="text" tabindex="10" size="20" value="" name="log" class="input-text" />
-                                            </label>
-                                        </p>
-
-                                        <p>
-                                            <label>
-                                                Password<br/>
-                                                <input type="password" tabindex="20" size="20" value="" name="pwd" class="input-text" />
-                                            </label>
-                                        </p>
-
-                                        <a class="align-left lostpassword" href="#" title="Password Lost and Found">
-                                            lost password?
-                                        </a>
-
-                                        <p class="align-right">
-                                            <input type="submit" tabindex="100" value="Login" name="wp-submit" class="input-submit" />
-                                            <input type="hidden" value="index.html" name="redirect_to" />
-                                            <input type="hidden" value="1" name="testcookie" />
-                                        </p>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
                         <!-- END TOPBAR LOGIN -->
                     </div>
                 </div>
@@ -192,10 +156,10 @@
                 <div class="row" id="logo-headersidebar-container">
                     <!-- START LOGO -->
                     <div id="logo" class="span6 group">
-                        <a id="logo-img" href="index.html" title="Libra">
-                            <img src="{{ asset(env('THEME')) }}/images/libra-logo1.png" title="Libra" alt="Libra" />
+                        <a id="logo-img" href="{{ route('home') }}" title="Libra">
+                            <img src="{{ asset(env('THEME')) }}/images/pako0.png" title="Libra" alt="Libra" />
                         </a>
-                        <p id='tagline'>Ремонт квартир, оффисов , все виды отделочных работ</p>
+                        <p id='tagline'>Ремонт квартир, оффисов, все виды отделочных работ</p>
                     </div>
                     <!-- END LOGO -->
 
@@ -215,33 +179,18 @@
                         <div class="widget-last widget widget_text">
                             <div class="textwidget">
                                 <div class="socials-default-small facebook-small default">
-                                    <a href="# " class="socials-default-small default facebook" >facebook</a>
-                                </div>
-
-                                <div class="socials-default-small skype-small default">
-                                    <a href="# " class="socials-default-small default skype" >skype</a>
+                                    <a href="https://vk.com/proremotbelarus" class="socials-default-small default facebook" >vkontacte</a>
                                 </div>
 
                                 <div class="socials-default-small linkedin-small default">
-                                    <a href="#" class="socials-default-small default linkedin" >linkedin</a>
+                                    <a href="#" class="socials-default-small default linkedin" >instagram</a>
                                 </div>
 
-                                <div class="socials-default-small twitter-small default">
-                                    <a href="#" class="socials-default-small default twitter" >twitter</a>
+                                <div class="socials-default-small skype-small default">
+                                    <a href="skype:rokki_x2?add" class="socials-default-small default skype" >skype</a>
                                 </div>
 
-                                <div class="socials-default-small flickr-small default">
-                                    <a href="#" class="socials-default-small default flickr" >flickr</a>
-                                </div>
 
-                                <div class="socials-default-small rss-small default">
-                                    <a href="#" class="socials-default-small default rss" >rss</a>
-                                </div>
-
-                                <div class="socials-default-small pinterest-small default">
-                                    <a href="#" class="socials-default-small default pinterest" >pinterest</a>
-
-                                </div>
                             </div>
 
                         </div>
@@ -253,18 +202,26 @@
             <!-- BEGIN #slider -->
             @yield('slider')
         </div>
+        <div class="slogan">
+            <h2>АКЦИЯ!!! </h2>
+
+            <h3>ПОЗВОНИ И ПОЛУЧИ СКИДКУ 10%.НАШЛИ ДЕШЕВЛЕ? СДЕЛАЕМ ЕЩЕ ДЕШЕВЛЕ!</h3>
+        </div>
+        @yield('service')
 
         <div style='height:10px;'></div>
         <!-- SLOGAN -->
         @if(Route::currentRouteName() == 'portfolios.index')
         <div class="slogan">
-            <h2>Portfolio 3 Columns</h2>
 
-            <h3>Lorem ipsum</h3>
+
+            <h3>Наши работы</h3>
         </div>
         @endif
+
         <!-- START PRIMARY -->
         <div id="primary" class="sidebar-right">
+
             <div class="container group">
                 <div class="row">
                     <!-- START CONTENT -->

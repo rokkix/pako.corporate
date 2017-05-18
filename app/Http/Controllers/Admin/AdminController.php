@@ -54,6 +54,8 @@ class AdminController extends Controller
             }
 
             $menu->add('Слайдер',array('route'=>'admin.sliders.index'));
+            $menu->add('Сервисы',array('route'=>'admin.services.index'));
+            $menu->add('Отзывы',array('route'=>'admin.reviews.index'));
             $menu->add('Наши работы',array('route'=>'admin.portfolios.index'));
             $menu->add('Меню',array('route'=>'admin.menus.index'));
             $menu->add('Пользователи',array('route'=>'admin.users.index'));

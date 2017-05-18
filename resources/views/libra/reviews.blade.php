@@ -9,19 +9,19 @@
                 <li>
                     <blockquote>
                         <p>
-                            <a href="{{ $review->url }}">
+
                                 &rdquo;{{ $review->text }}&rdquo;
-                            </a>
+
                         </p>
                     </blockquote>
 
                     <p class="meta">
                         <strong>
-                            <a href="#" class="name">{{ $review->customer }}</a>
+                            {{ $review->customer }}
                         </strong> -
-                        <a href="{{ $review->url }}">
-                            {{ $review->url }}
-                        </a>
+
+                            {{ $review->city }}
+
                     </p>
                 </li>
             @endforeach

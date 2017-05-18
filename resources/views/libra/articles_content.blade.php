@@ -1,7 +1,4 @@
-<div class="slogan">
-    <h2>OUR CORPORATE NEWS</h2>
-    <h3>are you curious, yeah?</h3>
-</div>
+
 <div id="content-blog" class="span9 content group">
     @if($articles)
     @foreach($articles as $article)

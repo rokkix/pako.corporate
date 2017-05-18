@@ -13,6 +13,9 @@
 @section('sidebar_portfolio')
     {!! $sidebar_portfolio !!}
 @endsection
+@section('service')
+    {!! $service !!}
+@endsection
 @section('blog')
     {!! $blog !!}
 @endsection

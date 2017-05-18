@@ -8,6 +8,8 @@ use Pako\Article;
 use Pako\Menu;
 use Pako\Photo;
 use Pako\Portfolio;
+use Pako\Review;
+use Pako\Service;
 use Pako\Slider;
 use Pako\User;
 
@@ -38,6 +40,14 @@ class RouteServiceProvider extends ServiceProvider
         });
         $router->bind('portfolios',function($value) {
             return Portfolio::where('alias',$value)->first();
+        });
+        $router->bind('services',function($value) {
+            
+            return Service::where('id',$value)->first();
+        });
+        $router->bind('reviews',function($value) {
+
+            return Review::where('id',$value)->first();
         });
 //        $router->bind('photos',function($value) {
 //

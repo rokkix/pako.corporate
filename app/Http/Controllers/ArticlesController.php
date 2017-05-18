@@ -65,7 +65,7 @@ class ArticlesController extends SiteController
         return $comments;
     }
     public function getPortfolios($take) {
-        $portfolios = $this->p_rep->get('*',$take);
+        $portfolios = $this->p_rep->get('*',$take,FALSE,FALSE,TRUE);
         return $portfolios;
     }
 

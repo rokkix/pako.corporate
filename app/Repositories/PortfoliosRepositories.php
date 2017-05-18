@@ -186,6 +186,7 @@ class PortfoliosRepositories extends Repository
     }
 
     public function deletePortfolio($portfolio) {
+        $this->deleteImagePhoto($portfolio);
         if(Gate::denies('destroy',$portfolio)) {
             abort(403);
         }
@@ -195,8 +196,25 @@ class PortfoliosRepositories extends Repository
 
 
         $portfolio->photo()->delete();
+
         if($portfolio->delete()) {
             return ['status' => 'Материал удален'];
         }
+    }
+
+    public function deleteImagePhoto($portfolio) {
+
+        foreach ($portfolio->photo as $photo) {
+            $photo->img = json_decode($photo->img);
+            if (File::exists(public_path() . '/' . env('THEME') . '/images/photos/' . $photo->img->max)) ;
+            {
+                File::delete(public_path() . '/' . env('THEME') . '/images/photos/' . $photo->img->max);
+            }
+            if (File::exists(public_path() . '/' . env('THEME') . '/images/photos/' . $photo->img->path)) ;
+            {
+                File::delete(public_path() . '/' . env('THEME') . '/images/photos/' . $photo->img->path);
+            }
+        }
+        return true;
     }
 }

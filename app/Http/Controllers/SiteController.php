@@ -10,6 +10,7 @@ use Pako\Repositories\MenusRepositories;
 
 class SiteController extends Controller
 {
+    protected $ser_rep;
     protected $p_rep;
     protected $s_rep;
     protected $a_rep;

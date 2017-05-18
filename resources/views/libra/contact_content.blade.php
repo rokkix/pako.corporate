@@ -8,7 +8,7 @@
                         <img src="{{ asset(env('THEME')) }}/images/contact-form/contact_icon.png" alt="title"/>
                     </div>
                     <div class="title-with-icon">
-                        <h1>Отправить письмо</h1>
+                        <h1>Email</h1>
                     </div>
                 </div>
 
@@ -27,9 +27,9 @@
 </div>
 <!-- START SLOGAN -->
 <div class="slogan">
-    <h2>SAY HELLO. WE'D LOVE TO MEET YOU.</h2>
+    <h3>Отправить нам письмо</h3>
 
-    <h3>seriously.</h3>
+
 </div>
 <!-- END SLOGAN -->
 
@@ -60,7 +60,7 @@
                     <li class="text-field with-icon span3">
 
                         <label for="name-contact-form">
-                            <span class="mainlabel">Name</span>
+                            <span class="mainlabel">Имя</span>
                         </label>
 
                         <div class="input-prepend"><span class="add-on">
@@ -75,7 +75,7 @@
                     <li class="text-field with-icon span3">
 
                         <label for="email-contact-form">
-                            <span class="mainlabel">Email</span>
+                            <span class="mainlabel">Почта</span>
                         </label>
 
                         <div class="input-prepend">
@@ -93,7 +93,7 @@
                     <li class="text-field with-icon span3">
 
                         <label for="phone-contact-form">
-                            <span class="mainlabel">Phone</span>
+                            <span class="mainlabel">Телефон</span>
                         </label>
 
                         <div class="input-prepend">
@@ -111,7 +111,7 @@
                     <li class="textarea-field with-icon span9">
 
                         <label for="message-contact-form">
-                            <span class="mainlabel">Message</span>
+                            <span class="mainlabel">Сообщение</span>
                         </label>
 
                         <div class="input-prepend">

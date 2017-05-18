@@ -12,10 +12,14 @@ use Pako\Policies\ArticlePolicy;
 use Pako\Policies\MenusPolicy;
 use Pako\Policies\PermissionPolicy;
 use Pako\Policies\PortfolioPolicy;
+use Pako\Policies\ReviewPolicy;
+use Pako\Policies\ServicePolicy;
 use Pako\Policies\SliderPolicy;
 use Pako\Policies\UserPolicy;
 use Pako\Portfolio;
 use Pako\Repositories\PortfoliosRepositories;
+use Pako\Review;
+use Pako\Service;
 use Pako\Slider;
 use Pako\User;
 
@@ -33,8 +37,10 @@ class AuthServiceProvider extends ServiceProvider
         User::class => UserPolicy::class,
         Slider::class => SliderPolicy::class,
         Portfolio::class => PortfolioPolicy::class,
-        Photo::class => PortfolioPolicy::class
-        
+        Photo::class => PortfolioPolicy::class,
+        Service::class => ServicePolicy::class,
+        Review::class => ReviewPolicy::class
+
 
     ];
 

@@ -6,22 +6,18 @@
 
                 <li>
                     <i class="icon-map-marker" style="color:#000;font-size:12px;width:12px;height:12px"></i>
-                    <span>Address:</span> Celestino, 115 Avenue - Italy
+                    <span>Адресс:</span> г.Минск , ул. Янки Мавра 3, офис 5
                 </li>
 
                 <li>
                     <i class="icon-phone" style="color:#000;font-size:12px;width:12px;height:12px"></i>
-                    <span>Mobile:</span> +39 3471717174
+                    <span>Телефон:</span> +375 (29) 705-80-04
                 </li>
 
-                <li>
-                    <i class="icon-print" style="color:#000;font-size:12px;width:12px;height:12px"></i>
-                    <span>Fax:</span> +39 0035 356 765
-                </li>
 
                 <li>
                     <i class="icon-envelope" style="color:#000;font-size:12px;width:12px;height:12px"></i>
-                    <span>Email:</span> celestino@yit.com
+                    <span>Email:</span> pako@pako.by
                 </li>
             </ul>
         </div>

@@ -52,7 +52,7 @@ class PhotosController extends AdminController
         $this->title = 'Добавить новое фото';
 
         $res = $this->getPortfolios()->reduce(function ($returnPhotos, $portfolio) {
-            $returnPhotos[$portfolio->id] = $portfolio->id;
+            $returnPhotos[$portfolio->id] = $portfolio->alias;
             return $returnPhotos;
         }, []);
         // dd($res);
@@ -75,6 +75,7 @@ class PhotosController extends AdminController
      */
     public function store(Request $request)
     {
+        
         $result = $this->photo_rep->addPhoto($request);
         if(is_array($result) && !empty($result['error'])) {
             return back()->with($result);
@@ -138,7 +139,7 @@ class PhotosController extends AdminController
 
         $photo->img = json_decode($photo->img);
         $res = $this->getPortfolios()->reduce(function ($returnPhotos, $portfolio) {
-            $returnPhotos[$portfolio->id] = $portfolio->id;
+            $returnPhotos[$portfolio->id] = $portfolio->alias;
             return $returnPhotos;
         }, []);
 

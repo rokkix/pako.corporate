@@ -2,7 +2,7 @@
 
 <div class="section blog margin-bottom span12">
     <h2 class="title">
-        From the <span class="title-highlight">blog</span> with featured article
+        Последние новости
     </h2>
     <div class="row">
         @foreach($articles as $k=>$item)
@@ -51,13 +51,9 @@
                                 </a>
                             </h4>
 
-                            <p class="author">by <strong>Nicola Mustone</strong></p>
+                            <p class="author">by <strong>{{ $item->user->name }}</strong></p>
 
-                            <p class="comments">
-                                <a href="blog-detail.html" title="Comment on Nice &amp; Clean. The best for your blog!">
-                                    <strong>Comments:</strong> 0
-                                </a>
-                            </p>
+
                         </div>
                     </div>
                 </div>

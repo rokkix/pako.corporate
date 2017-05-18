@@ -1,9 +1,5 @@
 <!-- SLOGAN -->
-<div class="slogan">
-    <h2>Portfolio Full Description</h2>
 
-    <h3>Project detail #1</h3>
-</div>
 <div id="content-page" class="span12 content group">
     <div class="page type-page status-publish group">
         @if($portfolio)
@@ -85,9 +81,9 @@
                                                 <img src="{{ asset(env('THEME')) }}/images/icons/project.png" alt=""/>
                                             </a></p>
 
-                                        <p class="title">Guanacos</p>
-
-                                        <p class="subtitle">corporate</p>
+                                        @if($portfolio->title)
+                                        <p class="title">{{$portfolio->title}}</p>
+                                        @endif
                                     </div>
                                 </div>
                             </div>
